@@ -39,9 +39,7 @@ README.md
 ## Student Information
 
 **Name:** Diyan Ghani Khan
-**CMSID:** 531268
 **Department:** Computer Science
-**Semester:** 5th
 
 ## Live Website
 
