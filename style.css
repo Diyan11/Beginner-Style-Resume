@@ -1,126 +1,202 @@
 /* General Styling */
 
 * {
-    box-sizing: border-box;
-}
+  box-sizing: border-box;
+  }
 
 body {
-    margin: 0;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
+margin: 0;
+padding: 20px;
+font-family: Arial, sans-serif;
+background-color: #f2f2f2;
+color: #333;
 }
 
 /* Resume Container */
 
 .resume {
-    max-width: 900px;
-    margin: auto;
-    background-color: white;
-    padding: 35px;
-    box-shadow: 0 0 10px #ccc;
+max-width: 900px;
+margin: auto;
+background-color: white;
+padding: 35px;
+box-shadow: 0 0 10px #ccc;
+}
+
+/* ============================= */
+/* 12-COLUMN GRID SYSTEM */
+/* ============================= */
+
+.grid-12 {
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+gap: 20px;
+margin-bottom: 25px;
+}
+
+/* Each column takes 1/12 of the grid */
+
+.col-12 {
+grid-column: span 12;
+}
+
+.col-6 {
+grid-column: span 6;
 }
 
 /* Header */
 
 header {
-    text-align: center;
-    background-color: #243b55;
-    color: white;
-    padding: 30px;
-    margin-bottom: 25px;
+text-align: center;
+background-color: #243b55;
+color: white;
+padding: 30px;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 35px;
+margin: 0;
+font-size: 35px;
 }
 
 header p {
-    margin: 8px 0;
+margin: 8px 0;
 }
 
 /* Sections */
 
 section {
-    margin-bottom: 25px;
+margin-bottom: 25px;
 }
 
 h2 {
-    color: #243b55;
-    border-bottom: 2px solid #243b55;
-    padding-bottom: 8px;
+color: #243b55;
+border-bottom: 2px solid #243b55;
+padding-bottom: 8px;
 }
 
 h3 {
-    margin-bottom: 5px;
+margin-bottom: 5px;
 }
 
 .item {
-    margin-bottom: 15px;
+margin-bottom: 15px;
 }
 
 /* Skills */
 
 .skills {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 10px;
 }
 
 .skills div {
-    background-color: #e8eef5;
-    padding: 12px;
-    text-align: center;
-    border-radius: 5px;
+background-color: #e8eef5;
+padding: 12px;
+text-align: center;
+border-radius: 5px;
+}
+
+/* Projects */
+
+.projects-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+}
+
+.projects-grid .item {
+background-color: #f5f7fa;
+padding: 15px;
+border-radius: 5px;
 }
 
 /* Footer */
 
 footer {
-    text-align: center;
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
-    margin-top: 30px;
+text-align: center;
+border-top: 1px solid #ddd;
+padding-top: 15px;
+margin-top: 30px;
 }
 
-/* Responsive Design */
+/* ============================= */
+/* TABLET MEDIA QUERY */
+/* ============================= */
 
 @media screen and (max-width: 768px) {
 
-    body {
-        padding: 10px;
-    }
-
-    .resume {
-        padding: 20px;
-    }
-
-    header h1 {
-        font-size: 28px;
-    }
-
-    .skills {
-        grid-template-columns: repeat(2, 1fr);
-    }
+body {
+    padding: 10px;
 }
+
+.resume {
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+/*
+   On tablet, Education and Skills
+   become full-width.
+*/
+
+.col-6 {
+    grid-column: span 12;
+}
+
+.projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.skills {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+}
+
+/* ============================= */
+/* MOBILE MEDIA QUERY */
+/* ============================= */
 
 @media screen and (max-width: 480px) {
 
-    .resume {
-        padding: 15px;
-    }
+body {
+    padding: 5px;
+}
 
-    header {
-        padding: 20px 10px;
-    }
+.resume {
+    padding: 15px;
+}
 
-    header h1 {
-        font-size: 24px;
-    }
+header {
+    padding: 20px 10px;
+}
 
-    .skills {
-        grid-template-columns: 1fr;
-    }
+header h1 {
+    font-size: 24px;
+}
+
+/*
+   On mobile, all sections
+   use the complete 12 columns.
+*/
+
+.col-6 {
+    grid-column: span 12;
+}
+
+.projects-grid {
+    grid-template-columns: 1fr;
+}
+
+.skills {
+    grid-template-columns: 1fr;
+}
+
+header p {
+    font-size: 14px;
+}
+
 }
